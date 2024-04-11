@@ -28,7 +28,7 @@ if(MSVC)
 else()
   set(ASSIMP_CMAKE_FLAGS "-DCMAKE_INSTALL_LIBDIR=lib")
 
-  set(ASSIMP_CXX_FLAGS "-std=c++14 ${CMAKE_CXX_FLAGS}")
+  set(ASSIMP_CXX_FLAGS "-std=c++14 -Wno-error=array-compare -Wno-error=array-bounds ${CMAKE_CXX_FLAGS}")
 endif()
 
 ament_vendor(assimp_vendor

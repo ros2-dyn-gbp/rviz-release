@@ -1,0 +1,25 @@
+From b439906bd416cefe4b0d967eb5fe93554f349b7f Mon Sep 17 00:00:00 2001
+From: Scott K Logan <logans@cottsay.net>
+Date: Wed, 10 Apr 2024 21:59:13 -0500
+Subject: [PATCH] Suppress some warnings so that we can build
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 13854dd353c3..f65b11d35cb6 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -28,7 +28,7 @@ if(MSVC)
+ else()
+   set(ASSIMP_CMAKE_FLAGS "-DCMAKE_INSTALL_LIBDIR=lib")
+ 
+-  set(ASSIMP_CXX_FLAGS "-std=c++14 ${CMAKE_CXX_FLAGS}")
++  set(ASSIMP_CXX_FLAGS "-std=c++14 -Wno-error=array-compare -Wno-error=array-bounds ${CMAKE_CXX_FLAGS}")
+ endif()
+ 
+ ament_vendor(assimp_vendor
+-- 
+2.44.0
+

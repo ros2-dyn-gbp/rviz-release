@@ -91,6 +91,4 @@ if(BUILD_TESTING)
   add_subdirectory(test)
 endif()
 
-set_target_properties(${PROJECT_NAME} PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
-
 ament_package()

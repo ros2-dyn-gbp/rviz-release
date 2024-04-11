@@ -1,0 +1,23 @@
+From 5736778366d3d7406e6b9867c156a1f3838190e2 Mon Sep 17 00:00:00 2001
+From: Scott K Logan <logans@cottsay.net>
+Date: Thu, 11 Apr 2024 11:22:02 -0500
+Subject: [PATCH] Stop installing RPATHs on rviz2 executable
+
+---
+ CMakeLists.txt | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index a0677c212488..35097fe0fcd8 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -91,6 +91,4 @@ if(BUILD_TESTING)
+   add_subdirectory(test)
+ endif()
+ 
+-set_target_properties(${PROJECT_NAME} PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
+-
+ ament_package()
+-- 
+2.44.0
+
